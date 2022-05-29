@@ -6,7 +6,9 @@ Logout::Logout(UserList* pUserList)
 	pLogoutUI = new LogoutUI(this);
 	pLogoutUI->logout();
 }
-void Logout::userLogout(char* id)
+string Logout::userLogout()
 {
-	pUserList->checkLogout(id);
+	string id;
+	id= pUserList->checkLogout();
+	return id;
 }

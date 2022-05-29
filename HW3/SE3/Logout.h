@@ -9,5 +9,5 @@ private:
 	UserList* pUserList;
 public:
 	Logout(UserList* pUserList);
-	void userLogout(char* id);
+	string userLogout();
 };

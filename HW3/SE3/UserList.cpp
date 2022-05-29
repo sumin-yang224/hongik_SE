@@ -1,7 +1,4 @@
 #include "UserList.h"
-#include <iostream>
-
-using namespace std;
 
 UserList::UserList()
 {
@@ -20,20 +17,22 @@ void UserList::checkLogin(char* id, char* pw)
 	
 	for (int i = 0; i < numUsers; i++)
 	{
-		if (id == userList[i]->getId()&pw==userList[i]->getPw())
+		if (id == userList[i]->getId()&&pw==userList[i]->getPw())
 		{
 			userList[i]->changeLoginStatus();
 		}
 	}
 }
-void UserList::checkLogout(char* id)
+string UserList::checkLogout()
 {
-
+	string id;
 	for (int i = 0; i < numUsers; i++)
 	{
-		if (id == userList[i]->getId() & userList[i]->checkLog())
+		if (userList[i]->checkLog())
 		{
 			userList[i]->changeLoginStatus();
+			id = userList[i]->getId();
 		}
 	}
+	return id;
 }

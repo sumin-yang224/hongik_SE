@@ -1,5 +1,8 @@
 #pragma once
 #include "User.h"
+#include <iostream>
+
+using namespace std;
 
 class UserList
 {
@@ -11,5 +14,5 @@ public:
 	void addNewUser(User* user);
 	void removeUser();
 	void checkLogin(char* id, char* pw);
-	void checkLogout(char* id);
+	string checkLogout();
 };

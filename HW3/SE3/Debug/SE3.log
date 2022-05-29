@@ -1,16 +1,4 @@
-﻿  Login.cpp
-  LoginUI.cpp
-  Logout.cpp
-  LogoutUI.cpp
-  main.cpp
-  SignUp.cpp
-  SignUpUI.cpp
+﻿  Logout.cpp
   UserList.cpp
-  Withdrawal.cpp
-  WithdrawalUI.cpp
-C:\Users\gram\source\repos\SE3\SE3\WithdrawalUI.cpp(19,4): error C3863: 배열 형식 'char [32]'은(는) 할당할 수 없습니다.
-C:\Users\gram\source\repos\SE3\SE3\WithdrawalUI.cpp(21,23): error C2065: 'name': 선언되지 않은 식별자입니다.
-C:\Users\gram\source\repos\SE3\SE3\WithdrawalUI.cpp(21,38): error C2065: 'ssn': 선언되지 않은 식별자입니다.
-C:\Users\gram\source\repos\SE3\SE3\WithdrawalUI.cpp(21,65): error C2065: 'pw': 선언되지 않은 식별자입니다.
   코드를 생성하고 있습니다...
-C:\Users\gram\source\repos\SE3\SE3\Withdrawal.cpp(13): error C4716: 'Withdrawal::removeUser': 값을 반환해야 합니다.
+  SE3.vcxproj -> C:\Users\gram\source\repos\SE3\Debug\SE3.exe

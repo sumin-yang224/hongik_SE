@@ -9,8 +9,6 @@
 1.1. 회원가입
 > Moon 2222 idK pwK
 2.1. 로그인
-> idp pwks
-1.1. 회원가입
-> Hi 2222 idK pwK
+> idp pwp
 2.2. 로그아웃
 > idp 

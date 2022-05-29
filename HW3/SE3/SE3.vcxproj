@@ -148,8 +148,12 @@
     <ClCompile Include="SignUpUI.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="UserList.cpp" />
-    <ClCompile Include="Withdrawal.cpp" />
-    <ClCompile Include="WithdrawalUI.cpp" />
+    <ClCompile Include="Withdrawal.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="WithdrawalUI.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h" />
@@ -160,8 +164,12 @@
     <ClInclude Include="SignUpUI.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="UserList.h" />
-    <ClInclude Include="Withdrawal.h" />
-    <ClInclude Include="WithdrawalUI.h" />
+    <ClInclude Include="Withdrawal.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="WithdrawalUI.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -15,9 +15,8 @@ LogoutUI::LogoutUI(Logout* logout)
 }
 void LogoutUI::logout()
 {
-	char id[MAX_STRING];
-	readFile >> id;
-	pLogout->userLogout(id);
+	string id;
+	id=pLogout->userLogout();
 	writeFile << "2.2. ·Î±×¾Æ¿ô" << endl;
 	writeFile << "> " << id << " " << endl;
 }
