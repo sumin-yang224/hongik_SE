@@ -23,6 +23,16 @@ void UserList::checkLogin(char* id, char* pw)
 		}
 	}
 }
+string UserList::checkLoginUser()
+{
+	string id;
+	for (int i = 0; i < numUsers; i++)
+	{
+		if (userList[i]->checkLog())
+			id = userList[i]->getId();
+	}
+	return id;
+}
 string UserList::checkLogout()
 {
 	string id;

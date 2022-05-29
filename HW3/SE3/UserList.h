@@ -14,5 +14,6 @@ public:
 	void addNewUser(User* user);
 	void removeUser();
 	void checkLogin(char* id, char* pw);
+	string checkLoginUser();
 	string checkLogout();
 };
