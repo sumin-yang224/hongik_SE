@@ -27,7 +27,7 @@ void PrintProductSalesStatisticsUI::printSalesStatistics()
 {
 	string productName[MAX_CLOTHING_PRODUCT_NUM];
 	int totalSales[MAX_CLOTHING_PRODUCT_NUM];
-	int average[MAX_CLOTHING_PRODUCT_NUM];
+	float average[MAX_CLOTHING_PRODUCT_NUM];
 	int numClothingProduct;
 	numClothingProduct = pPrintProductSalesStatistics->showSalesStatistics(productName, totalSales, average);
 

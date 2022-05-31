@@ -29,7 +29,7 @@ void InquireSoldOutClothingUI::inquireSoldOutClothingProduct()
 	string productCompanyName[MAX_CLOTHING_PRODUCT_NUM];
 	int price[MAX_CLOTHING_PRODUCT_NUM];
 	int salesQuantity[MAX_CLOTHING_PRODUCT_NUM];
-    int average[MAX_CLOTHING_PRODUCT_NUM];
+    float average[MAX_CLOTHING_PRODUCT_NUM];
 	int numClothingProduct;
 	numClothingProduct = pInquireSoldOutClothing->showSoldOutClothingProduct(productName, productCompanyName, price, salesQuantity, average);
 

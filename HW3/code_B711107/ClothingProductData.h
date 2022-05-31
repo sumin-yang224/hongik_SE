@@ -10,7 +10,7 @@ private:
     int price;
     int remainQuantity;
     int salesQuantity;
-    int average;
+    float average;
     int satisfaction;
 
 public:
@@ -19,6 +19,6 @@ public:
     int getRemainQuantity();
 
     void getSalesClothingProductDetails(string*, string*, int*, int*);
-    void getSoldOutClothingProductDetails(string*, string*, int*, int*, int*);
-    void getClothingProductStatistics(string*, int*, int*);
+    void getSoldOutClothingProductDetails(string*, string*, int*, int*, float*);
+    void getClothingProductStatistics(string*, int*, float*);
 };

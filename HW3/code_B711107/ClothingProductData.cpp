@@ -43,7 +43,7 @@ int ClothingProductData::getRemainQuantity(){
 	전달 인자 : string *productName, int *totalSales, int *average
 	반환값    : 없음
 */
-void ClothingProductData::getClothingProductStatistics(string *productName, int *totalSales, int *average){
+void ClothingProductData::getClothingProductStatistics(string *productName, int *totalSales, float *average){
     *productName = this->productName;
     *totalSales = this->price * this->salesQuantity;
     *average = this->average;
@@ -68,7 +68,7 @@ void ClothingProductData::getSalesClothingProductDetails(string *productName, st
 	전달 인자 : string *productName, string *productCompanyName, int* price, int* salesQuantity, int*average
 	반환값    : 없음
 */
-void ClothingProductData::getSoldOutClothingProductDetails(string *productName, string *productCompanyName, int* price, int* salesQuantity, int*average){
+void ClothingProductData::getSoldOutClothingProductDetails(string *productName, string *productCompanyName, int* price, int* salesQuantity, float* average){
     *productName = this->productName;
     *productCompanyName = this->productCompanyName;
     *price = this->price;

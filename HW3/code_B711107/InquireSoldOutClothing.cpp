@@ -16,10 +16,10 @@ InquireSoldOutClothing::InquireSoldOutClothing(ClothingProductList* clothingProd
 /*
 	함수 이름 : showSoldOutClothingProduct()
 	기능	  : UserList로부터 로그인한 유저의 아이디를 가져오고, 해당 유저의 판매완료 상품정보를 저장
-	전달 인자 : string* productName, string* productCompanyName, int* price, int* salesQuantity, int* average
+	전달 인자 : string* productName, string* productCompanyName, int* price, int* salesQuantity, float* average
 	반환값    : 해당 유저의 판매완료된 상품 종류수
 */
-int InquireSoldOutClothing::showSoldOutClothingProduct(string* productName, string* productCompanyName, int* price, int* salesQuantity, int* average)
+int InquireSoldOutClothing::showSoldOutClothingProduct(string* productName, string* productCompanyName, int* price, int* salesQuantity, float* average)
 {
 	string userID = pUserList->checkLoginUser();
 	ClothingProductList* clothingProductList = new ClothingProductList;

@@ -19,7 +19,7 @@ PrintProductSalesStatistics::PrintProductSalesStatistics(ClothingProductList* cl
 	전달 인자 : string* productName, int* totalSales, int* average
 	반환값    : 해당 유저가 판매하고있는/판매완료한 모든 상품 종류수
 */
-int PrintProductSalesStatistics::showSalesStatistics(string* productName, int* totalSales, int* average)
+int PrintProductSalesStatistics::showSalesStatistics(string* productName, int* totalSales, float* average)
 {
 	string userID = pUserList->checkLoginUser();
 	ClothingProductList* clothingProductList = new ClothingProductList;
