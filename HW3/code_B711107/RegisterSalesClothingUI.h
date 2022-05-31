@@ -1,8 +1,6 @@
 #pragma once
 #include "RegisterSalesClothing.h"
 
-using namespace std;
-
 class RegisterSalesClothing;
 
 class RegisterSalesClothingUI

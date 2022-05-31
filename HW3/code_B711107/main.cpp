@@ -1,6 +1,13 @@
 #include "ClothingProductList.h"
-#include "PrintProductSalesStatistics.h"
 #include "UserList.h"
+
+#include "Login.h"
+#include "Logout.h"
+#include "SignUp.h"
+#include "InquireSalesClothing.h"
+#include "InquireSoldOutClothing.h"
+#include "PrintProductSalesStatistics.h"
+#include "RegisterSalesClothing.h"
 
 #include <iostream>
 #include <cstring>
@@ -61,7 +68,7 @@ void run()
                 {
                     case 1: //1.1. 회원가입
                     {
-                        // SignUp signUp(userList);
+                        SignUp signUp(userList);
                         cout << "회원가입 완료" << endl;
                         break;
                     }
@@ -71,6 +78,7 @@ void run()
                         break;
                     }
                 }
+                break;
             }
             case 2:
             {
@@ -78,39 +86,43 @@ void run()
                 {
                     case 1: // 2.1. 로그인
                     {
-                        // 2.1() 함수에서 해당 기능 수행 
-                        // Login login(userList);
+                        Login login(userList);
                         cout << "로그인 완료" << endl;
                         break;
                     }
                     case 2: // 2.2. 로그아웃
                     {
-                        
+                        Logout logout(userList);
+                        cout << "로그아웃 완료" << endl;
                         break;
                     }
                 }
+                break;
             }
             case 3:
             {
               switch(menu_level_2)
                 {
                     case 1:   // "3.1. 판매 의류 등록" 메뉴 부분
-                    {
-            	        // join() 함수에서 해당 기능 수행 
-                        
+                    { 
+                        RegisterSalesClothing registerSalesClothing(clothingProductList, userList);
+                        cout << "판매 의류 등록 완료" << endl;
                         break;
                     }
                     case 2:   // "3.2. 등록 상품 조회" 메뉴 부분
                     {
-                        /*...*/
+                        InquireSalesClothing inquireSalesClothing(clothingProductList, userList);
+                        cout << "판매 중인 상품 조회 완료" << endl;
                         break;
                     }
                     case 3:   // "3.3. 판매 완료 상품 조회" 메뉴 부분
                     {
-
+                        InquireSoldOutClothing inquireSoldOutClothing(clothingProductList, userList);
+                        cout << "판매 완료 상품 조회 완료" << endl;
                         break;
                     }
                 }
+                break;
             }
             case 4:
             {
@@ -118,7 +130,6 @@ void run()
                 {
                     case 1:   // "4.1. 상품 정보 검색" 메뉴 부분
                     {
-            	        // join() 함수에서 해당 기능 수행 
                         
                         break;
                     }
@@ -138,6 +149,7 @@ void run()
                         break;
                     }
                 }
+                break;
             }
             case 5:
             {
@@ -150,6 +162,7 @@ void run()
                         break;
                     }
                 }
+                break;
             }
             /*...*/
             case 6:

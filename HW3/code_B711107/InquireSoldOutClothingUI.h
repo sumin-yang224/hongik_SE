@@ -1,8 +1,6 @@
 #pragma once
 #include "InquireSoldOutClothing.h"
 
-using namespace std;
-
 class InquireSoldOutClothing;
 
 class InquireSoldOutClothingUI

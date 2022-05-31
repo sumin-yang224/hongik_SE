@@ -17,5 +17,5 @@ public:
     void listAllClothingProduct(string, ClothingProductList*);
     void listPurchaseClothingProducts();
     int getNumClothingProduct();
-    ClothingProductData* getClothingProductData();
+    ClothingProductData* getClothingProductData(int);
 };

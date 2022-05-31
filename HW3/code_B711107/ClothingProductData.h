@@ -1,6 +1,4 @@
 #include <iostream>
-#include <string>
-
 using namespace std;
 
 class ClothingProductData
@@ -20,9 +18,7 @@ public:
     string getSellerID();
     int getRemainQuantity();
 
-    void getSalesClothingProductDetails(string, string, int*, int*);
-    void createClothingProduct();
-    void getSoldOutClothingProductDetails(string, string, int*, int*, int*);
-    void getClothingProductStatistics(string, int*, int*);
-    void addSatisfactionOfProduct();
+    void getSalesClothingProductDetails(string*, string*, int*, int*);
+    void getSoldOutClothingProductDetails(string*, string*, int*, int*, int*);
+    void getClothingProductStatistics(string*, int*, int*);
 };
