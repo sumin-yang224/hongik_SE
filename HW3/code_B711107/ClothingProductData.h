@@ -16,7 +16,7 @@ private:
     int satisfaction;
 
 public:
-    ClothingProductData();
+    ClothingProductData(string, string, int, int, string);
     string getSellerID();
     int getRemainQuantity();
 

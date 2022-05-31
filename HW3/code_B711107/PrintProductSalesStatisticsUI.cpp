@@ -1,6 +1,6 @@
+#include "PrintProductSalesStatisticsUI.h"
 #include <iostream>
 #include <fstream>
-#include "PrintProductSalesStatisticsUI.h"
 
 using namespace std;
 
@@ -8,17 +8,22 @@ extern ifstream readFile;
 extern ofstream writeFile;
 
 /*
-	함수 이름 : PrintProductSalesStatisticsUI::printSalesStatistics()
-	기능	  : 
-	전달 인자 : 없음
+	함수 이름 : PrintProductSalesStatisticsUI::PrintProductSalesStatisticsUI
+	기능	  : 생성자
+	전달 인자 : PrintProductSalesStatistics* printProductSalesStatistics
 	반환값    : 없음
 */
-
 PrintProductSalesStatisticsUI::PrintProductSalesStatisticsUI(PrintProductSalesStatistics* printProductSalesStatistics)
 {
 	pPrintProductSalesStatistics = printProductSalesStatistics;
 }
 
+/*
+	함수 이름 : PrintProductSalesStatisticsUI::printSalesStatistics()
+	기능	  : 판매 상품 통계 UI로, control class로부터 상품 리스트를 받아와서 판매 상품 통계 출력
+	전달 인자 : 없음
+	반환값    : 없음
+*/
 void PrintProductSalesStatisticsUI::printSalesStatistics()
 {
 	ClothingProductList* clothingProductList = new ClothingProductList;

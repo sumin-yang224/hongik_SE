@@ -1,10 +1,9 @@
 #pragma once
-
 #include "ClothingProductList.h"
 #include "InquireSoldOutClothingUI.h"
 #include "UserList.h"
 
-using namespace std;
+class InquireSoldOutClothingUI;
 
 class InquireSoldOutClothing
 {

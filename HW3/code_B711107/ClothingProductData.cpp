@@ -1,22 +1,22 @@
 #include "ClothingProductData.h"
 
-ClothingProductData::ClothingProductData(){
-    productName;
-    productCompanyName;
-    price;
-    remainQuantity;
-    salesQuantity=0;
-    average;
-    satisfaction;
-    sellerID;
+ClothingProductData::ClothingProductData(string productName, string productCompanyName, int price, int quantity, string sellerID){
+    this->productName = productName;
+    this->productCompanyName = productCompanyName;
+    this->price = price;
+    this->remainQuantity= quantity;
+    this->salesQuantity = 0;
+    this->average = 0;
+    this->satisfaction = 0;
+    this->sellerID= sellerID;
 }
 
 string ClothingProductData::getSellerID(){
     return this->sellerID;
 }
 
-int ClothingProductData::getQuantity(){
-    return this->quantity;
+int ClothingProductData::getRemainQuantity(){
+    return this->remainQuantity;
 }
 
 void ClothingProductData::getClothingProductStatistics(string productName, int *totalSales, int *average){
@@ -25,17 +25,17 @@ void ClothingProductData::getClothingProductStatistics(string productName, int *
     *average = this->average;
 }
 
-void ClothingProductData::getSalesClothingProductDetails(string productName, string productCompanyName, int* price, int* quantity){
-    this->productName = productName;
-    this->productCompanyName = productCompanyName;
-    this->price = *price;
-    this->quantity = *quantity;
+void ClothingProductData::getSalesClothingProductDetails(string productName, string productCompanyName, int* price, int* remainQuantity){
+    productName = this->productName;
+    productCompanyName = this->productCompanyName;
+    *price = this->price;
+    *remainQuantity = this->remainQuantity;
 }
 
-void ClothingProductData::getSoldOutClothingProductDetails(string productName, string productCompanyName, int* price, int* totalQuantity, int*average){
-    this->productName = productName;
-    this->productCompanyName = productCompanyName;
-    this->price = *price;
-    this->totalQuantity = *totalQuantity;
-    this->average = *average;
+void ClothingProductData::getSoldOutClothingProductDetails(string productName, string productCompanyName, int* price, int* salesQuantity, int*average){
+    productName = this->productName;
+    productCompanyName = this->productCompanyName;
+    *price = this->price;
+    *salesQuantity = this->salesQuantity;
+    *average = this->average;
 }

@@ -1,10 +1,10 @@
-#include <iostream>
-#include <cstring>
-#include <fstream>
-
 #include "ClothingProductList.h"
 #include "PrintProductSalesStatistics.h"
 #include "UserList.h"
+
+#include <iostream>
+#include <cstring>
+#include <fstream>
 
 using namespace std;
 

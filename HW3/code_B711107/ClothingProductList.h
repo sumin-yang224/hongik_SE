@@ -1,8 +1,6 @@
 #pragma once
-#include <iostream>
 #include "ClothingProductData.h"
-
-using namespace std;
+#include <iostream>
 
 #define MAX_CLOTHING_PRODUCT_NUM 50
 
