@@ -19,21 +19,21 @@ PrintProductSalesStatisticsUI::PrintProductSalesStatisticsUI(PrintProductSalesSt
 
 /*
 	함수 이름 : printSalesStatistics()
-	기능	  : 판매 상품 통계 UI로, control class로부터 로그인한 유저의 상품 리스트를 받아와서 판매 상품 통계 출력
+	기능	  : 판매 상품 통계 UI로, control class로부터 로그인한 유저의 판매 상품 통계정보를 받아와서 출력
 	전달 인자 : 없음
 	반환값    : 없음
 */
 void PrintProductSalesStatisticsUI::printSalesStatistics()
 {
-	ClothingProductList* clothingProductList = new ClothingProductList;
-	pPrintProductSalesStatistics->showSalesStatistics(clothingProductList);
+	string productName[MAX_CLOTHING_PRODUCT_NUM];
+	int totalSales[MAX_CLOTHING_PRODUCT_NUM];
+	int average[MAX_CLOTHING_PRODUCT_NUM];
+	int numClothingProduct;
+	numClothingProduct = pPrintProductSalesStatistics->showSalesStatistics(productName, totalSales, average);
 
 	writeFile << "5.1 판매 상품 통계" << endl;
-	for(int i=0;i<clothingProductList->getNumClothingProduct();i++){
-		string productName;
-		int totalSales;
-		int average;
-		clothingProductList->getClothingProductData(i)->getClothingProductStatistics(&productName, &totalSales, &average);
-		writeFile << "> " << productName << " " << totalSales << " " << average << endl;  
+	
+	for(int i=0;i<numClothingProduct;i++){
+		writeFile << "> " << productName[i] << " " << totalSales[i] << " " << average[i] << endl;
 	}
 }

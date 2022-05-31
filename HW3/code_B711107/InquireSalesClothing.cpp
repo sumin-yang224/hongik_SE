@@ -15,12 +15,17 @@ InquireSalesClothing::InquireSalesClothing(ClothingProductList* clothingProductL
 
 /*
 	함수 이름 : showSalesClothingProduct()
-	기능	  : UserList로부터 로그인한 유저의 아이디를 가져오고, 해당 유저의 판매중인 상품 정보 출력
-	전달 인자 : ClothingProductList* clothingProductList
-	반환값    : 없음
+	기능	  : UserList로부터 로그인한 유저의 아이디를 가져오고, 해당 유저의 판매중인 상품 정보를 저장
+	전달 인자 : string* productName, string* productCompanyName, int* price, int* remainQuantity
+	반환값    : 해당 유저의 판매중인 상품 종류수
 */
-void InquireSalesClothing::showSalesClothingProduct(ClothingProductList* clothingProductList)
+int InquireSalesClothing::showSalesClothingProduct(string* productName, string* productCompanyName, int* price, int* remainQuantity)
 {
 	string userID = pUserList->checkLoginUser();
+	ClothingProductList* clothingProductList = new ClothingProductList();
     pClothingProductList->listSalesClothingProduct(userID, clothingProductList);
+	for(int i=0;i<clothingProductList->getNumClothingProduct();i++){
+		clothingProductList->getClothingProductData(i)->getSalesClothingProductDetails(&productName[i], &productCompanyName[i], &price[i], &remainQuantity[i]);
+	}
+	return clothingProductList->getNumClothingProduct();
 }

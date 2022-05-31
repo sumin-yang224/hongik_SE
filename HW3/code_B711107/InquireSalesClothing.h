@@ -14,5 +14,5 @@ private:
 
 public:
     InquireSalesClothing(ClothingProductList*, UserList*);
-    void showSalesClothingProduct(ClothingProductList* clothingProductList);
+    int showSalesClothingProduct(string* , string*, int*, int*);
 };

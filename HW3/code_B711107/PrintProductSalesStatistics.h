@@ -14,5 +14,5 @@ private:
 
 public:
     PrintProductSalesStatistics(ClothingProductList*, UserList*);
-    void showSalesStatistics(ClothingProductList* clothingProductList);
+    int showSalesStatistics(string*, int*, int*);
 };
