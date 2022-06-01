@@ -110,8 +110,10 @@ void ClothingProductList::listAllClothingProduct(string userID, ClothingProductL
 void ClothingProductList::listPurchaseClothingProduct(string userID, ClothingProductList* clothingProductList) {
 	
 	for (int i = 0; i < this->numClothingProducts; i++) {
-		if (this->clothingProductList[i]->getBuyerID() == userID) {
-			clothingProductList->addNewClothingProduct(this->clothingProductList[i]);
+		for (int j = 0; j < this->clothingProductList[i]->getSalesQuantity(); j++) {
+			if (this->clothingProductList[i]->getBuyerID(j) == userID) {
+				clothingProductList->addNewClothingProduct(this->clothingProductList[i]);
+			}
 		}
 	}
 }
@@ -123,14 +125,16 @@ void ClothingProductList::listPurchaseClothingProduct(string userID, ClothingPro
 	전달 인자 : string userID, ClothingProductList* clothingProductList, int satisfaction
 	반환값    : 없음
 */
-ClothingProductData* ClothingProductList::addSatisfactionOfProduct(string userID, string ProductName, int Satisfaction) {
+ClothingProductData* ClothingProductList::addSatisfactionOfProduct(string userID, string productName, int satisfaction) {
 	int checkNull = 1;
 	for (int i = 0; i < this->numClothingProducts; i++) {
-		if (this->clothingProductList[i]->getBuyerID() == userID && this->clothingProductList[i]->getProductName() == ProductName) {
-			this->clothingProductList[i]->setSatisfaction(Satisfaction);
-			checkNull = 0;
-			return this->clothingProductList[i];
-		}	
+		for (int j = 0; j < this->clothingProductList[i]->getSalesQuantity(); j++) {
+			if (this->clothingProductList[i]->getBuyerID(j) == userID && this->clothingProductList[i]->getProductName() == productName) {
+				this->clothingProductList[i]->setSatisfaction(satisfaction);
+				checkNull = 0;
+				return this->clothingProductList[i];
+			}	
+		}
 	}
 	if(checkNull) {
 		return NULL;
