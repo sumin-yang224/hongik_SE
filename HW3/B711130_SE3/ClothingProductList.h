@@ -23,4 +23,5 @@ public:
     int getNumClothingProduct();
     ClothingProductData* getClothingProductData(int);
     ClothingProductData* searchClothingProductData(string);
+    ClothingProductData* addSatisfactionOfProduct(string, string, int);
 };
