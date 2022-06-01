@@ -3,14 +3,16 @@
 #include <string>
 using namespace std;
 
-SearchClothing::SearchClothing(ClothingProductList* pClothingProductList)
-{	
+SearchClothing::SearchClothing(ClothingProductList *pClothingProductList)
+{
 	this->pClothingProductList = pClothingProductList;
 	pSearchClothingUI = new SearchClothingUI(this);
 	pSearchClothingUI->searchClothingProduct();
 }
 
-ClothingProductData* SearchClothing::showClothingProductDetails(string ProductName)
+void SearchClothing::showClothingProductDetails(string productName, string *productCompanyName, int *price, int *remainQuantity, string *sellerID, float *average)
 {
-	return pClothingProductList->searchClothingProductData(ProductName);
+	ClothingProductData *data;
+	data = pClothingProductList->searchClothingProductData(productName);
+	data->getSalesClothingProductDetails(&productName, productCompanyName, price, remainQuantity, sellerID, average);
 }

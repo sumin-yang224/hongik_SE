@@ -12,7 +12,7 @@ using namespace std;
 extern ifstream readFile;
 extern ofstream writeFile;
 
-SearchClothingUI::SearchClothingUI(SearchClothing* SearchClothing)
+SearchClothingUI::SearchClothingUI(SearchClothing *SearchClothing)
 {
 	pSearchClothing = SearchClothing;
 }
@@ -27,9 +27,7 @@ void SearchClothingUI::searchClothingProduct()
 
 	readFile >> productName;
 
-	ClothingProductData* data;
-	data = pSearchClothing->showClothingProductDetails(productName);
+	pSearchClothing->showClothingProductDetails(productName, &productCompanyName, &price, &remainQuantity, &sellerID, &average);
 	writeFile << "4.4. 상품 정보 검색 " << endl;
-	data->getSalesClothingProductDetails(&productName, &productCompanyName, &price, &remainQuantity, &sellerID, &average);
 	writeFile << "> " << sellerID << " " << productName << " " << productCompanyName << " " << price << " " << remainQuantity << " " << average << endl;
 }

@@ -4,14 +4,25 @@
 #include <string>
 using namespace std;
 
-SatisfactionAssessment::SatisfactionAssessment(ClothingProductList* pClothingProductList, UserList* userList)
+SatisfactionAssessment::SatisfactionAssessment(ClothingProductList *pClothingProductList, UserList *userList)
 {
 	this->pClothingProductList = pClothingProductList;
-	pSatisfactionAssessmentUI = new SatisfactionAssessmentUI(this, userList);
+	this->pUserList = userList;
+	this->pSatisfactionAssessmentUI = new SatisfactionAssessmentUI(this);
 	pSatisfactionAssessmentUI->enterSatisfaction();
 }
 
-ClothingProductData* SatisfactionAssessment::addSatisfactionOfProduct(string userID, string ProductName, int Satisfaction)
+bool SatisfactionAssessment::addSatisfactionOfProduct(string *sellerID, string ProductName, int Satisfaction)
 {
-	return pClothingProductList->addSatisfactionOfProduct(userID, ProductName, Satisfaction);
+	ClothingProductData *data;
+	string userID = this->pUserList->checkLoginUser();
+
+	data = pClothingProductList->addSatisfactionOfProduct(userID, ProductName, Satisfaction);
+	if (data == NULL)
+	{ //구매하지않은 상품 만족도평가했을 때의 무효처리
+		return false;
+	}
+	*sellerID = data->getSellerID();
+
+	return true;
 }

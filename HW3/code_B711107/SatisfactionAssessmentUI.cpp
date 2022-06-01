@@ -12,10 +12,9 @@ using namespace std;
 extern ifstream readFile;
 extern ofstream writeFile;
 
-SatisfactionAssessmentUI::SatisfactionAssessmentUI(SatisfactionAssessment* satisfactionAssessment, UserList* userList)
+SatisfactionAssessmentUI::SatisfactionAssessmentUI(SatisfactionAssessment *satisfactionAssessment)
 {
 	pSatisfactionAssessment = satisfactionAssessment;
-	pUserList = userList;
 }
 
 void SatisfactionAssessmentUI::enterSatisfaction()
@@ -24,18 +23,17 @@ void SatisfactionAssessmentUI::enterSatisfaction()
 	string productCompanyName;
 	string sellerID;
 	int average, satisfaction, price, remainQuantity;
-	string userID = this->pUserList->checkLoginUser();
 
 	readFile >> productName;
 	readFile >> satisfaction;
 
-	ClothingProductData* data;
-	data = pSatisfactionAssessment->addSatisfactionOfProduct(userID, productName, satisfaction);
-	if (data == NULL) { //구매하지않은 상품 만족도평가했을 때의 무효처리
+	bool ret;
+	ret = pSatisfactionAssessment->addSatisfactionOfProduct(&sellerID, productName, satisfaction);
+	if (ret == false)
+	{ //구매하지않은 상품 만족도평가했을 때의 무효처리
 		cout << "구매하지않은 물건입니다." << endl;
 		return;
 	}
-	sellerID = data->getSellerID();
 
 	writeFile << "4.4. 상품 구매만족도 평가" << endl;
 	writeFile << "> " << sellerID << " " << productName << " " << satisfaction << endl;

@@ -6,9 +6,9 @@ class SatisfactionAssessment;
 class SatisfactionAssessmentUI
 {
 private:
-	SatisfactionAssessment* pSatisfactionAssessment;
-	UserList* pUserList;
+	SatisfactionAssessment *pSatisfactionAssessment;
+
 public:
-	SatisfactionAssessmentUI(SatisfactionAssessment* satisfactionAssessment, UserList* userList);
+	SatisfactionAssessmentUI(SatisfactionAssessment *satisfactionAssessment);
 	void enterSatisfaction();
 };
