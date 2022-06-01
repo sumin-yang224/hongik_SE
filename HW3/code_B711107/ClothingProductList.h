@@ -12,10 +12,12 @@ private:
 public: 
     ClothingProductList();
     void addNewClothingProduct(ClothingProductData*);
+    void listAllClothingProduct(string, ClothingProductList*);
+    void listPurchaseClothingProduct(string, ClothingProductList*);
     void listSalesClothingProduct(string, ClothingProductList*);
     void listSoldOutClothingProduct(string, ClothingProductList*);
-    void listAllClothingProduct(string, ClothingProductList*);
-    void listPurchaseClothingProducts();
     int getNumClothingProduct();
+    ClothingProductData* addSatisfactionOfProduct(string,string,int);
     ClothingProductData* getClothingProductData(int);
+    ClothingProductData* searchClothingProductData(string);
 };

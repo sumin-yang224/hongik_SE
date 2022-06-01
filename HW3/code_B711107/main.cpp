@@ -1,13 +1,17 @@
 #include "ClothingProductList.h"
-#include "UserList.h"
-
-#include "Login.h"
-#include "Logout.h"
-#include "SignUp.h"
+#include "InquirePurchaseClothing.h"
 #include "InquireSalesClothing.h"
 #include "InquireSoldOutClothing.h"
+#include "Login.h"
+#include "Logout.h"
 #include "PrintProductSalesStatistics.h"
+#include "PurchaseClothing.h"
 #include "RegisterSalesClothing.h"
+#include "SatisfactionAssessment.h"
+#include "SearchClothing.h"
+#include "SignUp.h"
+#include "UserList.h"
+#include "Withdrawal.h"
 
 #include <iostream>
 #include <cstring>
@@ -35,7 +39,6 @@ int main()
     readFile.open(INPUT_FILE_NAME);
     writeFile.open(OUTPUT_FILE_NAME);
     
-    /*...*/
     run();
 
     readFile.close();
@@ -74,7 +77,7 @@ void run()
                     }
                     case 2: //1.2. 회원탈퇴
                     {
-                        /*...*/
+                        Withdrawal withDrawal(userList);
                         break;
                     }
                 }
@@ -130,22 +133,26 @@ void run()
                 {
                     case 1:   // "4.1. 상품 정보 검색" 메뉴 부분
                     {
-                        
+                        SearchClothing searchClothing(clothingProductList);
+				        cout << "상품 검색 완료" << endl;
                         break;
                     }
                     case 2:   // "4.2. 상품 구매" 메뉴 부분
                     {
-                        /*...*/
+                        PurchaseClothing purchaseClothing(clothingProductList, userList);
+				        cout << "상품 구매 완료" << endl;
                         break;
                     }
                     case 3:   // "4.3. 상품 구매 내역 조회" 메뉴 부분
                     {
-
+                        InquirePurchaseClothing inquirePurchaseClothing(clothingProductList, userList);
+				        cout << "상품 구매 내역 조회 완료" << endl;
                         break;
                     }
                     case 4:   // "4.4. 상품 구매만족도 평가" 메뉴 부분
                     {
-
+                        SatisfactionAssessment satisfactionAssessment(clothingProductList, userList);
+				        cout << "상품 구매만족도 평가 완료" << endl;
                         break;
                     }
                 }
@@ -164,7 +171,6 @@ void run()
                 }
                 break;
             }
-            /*...*/
             case 6:
             {
                 switch(menu_level_2)
