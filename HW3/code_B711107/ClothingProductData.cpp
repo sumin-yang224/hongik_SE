@@ -13,8 +13,9 @@ ClothingProductData::ClothingProductData(string productName, string productCompa
     this->remainQuantity= quantity;
     this->salesQuantity = 0;
     this->sellerID= sellerID;
-    this->satisfaction[quantity] = { 0 };
-	this->buyerID[quantity] = {NULL};
+    memset(this->satisfaction, 0, sizeof(int) * MAX_BUYER_NUM);
+	for (int i = 0; i < MAX_BUYER_NUM; i++)
+		this->buyerID[i] = "";
 	this->recentSearch =0;
 }
 
