@@ -3,8 +3,6 @@
 #include <fstream>
 #include "PurchaseClothingUI.h"
 #include "PurchaseClothing.h"
-//#include "ClothingProductData.h"
-//#include "ClothingProductList.h"
 
 using namespace std;
 
@@ -27,8 +25,11 @@ void PurchaseClothingUI::clickPurchaseButton()
 	ClothingProductData* data;
 
 	data = pPurchaseClothing->purchaseClothingProduct();
-
-	writeFile << "4.2. ��ǰ ����" << endl;
+	if (data->getBuyerID() == userID) {
+		cout << "이미 구매한 상품입니다." << endl;
+		return;
+	}
+	writeFile << "4.2. 상품 구매" << endl;
 	data->getSalesClothingProductDetails(&productName, &productCompanyName, &price, &remainQuantity, &sellerID, &average);
 	data->upsalesQuantity();
 	data->downremainQuantity();
