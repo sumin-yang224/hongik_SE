@@ -1,10 +1,10 @@
 #include "ClothingProductData.h"
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : ClothingProductData()
-	±â´É	  : »ý¼ºÀÚ
-	Àü´Þ ÀÎÀÚ : string productName, string productCompanyName, int price, int quantity, string sellerID
-	¹ÝÈ¯°ª    : ClothingProductData Instance
+	í•¨ìˆ˜ ì´ë¦„ : ClothingProductData()
+	ê¸°ëŠ¥	  : ìƒì„±ìž
+	ì „ë‹¬ ì¸ìž : string productName, string productCompanyName, int price, int quantity, string sellerID
+	ë°˜í™˜ê°’    : ClothingProductData Instance
 */
 ClothingProductData::ClothingProductData(string productName, string productCompanyName, int price, int quantity, string sellerID) {
 	this->productName = productName;
@@ -22,20 +22,20 @@ ClothingProductData::ClothingProductData(string productName, string productCompa
 
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : getProductName()
-	±â´É	  : ¸â¹öº¯¼ö productName ¹ÝÈ¯
-	Àü´Þ ÀÎÀÚ : ¾øÀ½
-	¹ÝÈ¯°ª    : string productName
+	í•¨ìˆ˜ ì´ë¦„ : getProductName()
+	ê¸°ëŠ¥	  : ë©¤ë²„ë³€ìˆ˜ productName ë°˜í™˜
+	ì „ë‹¬ ì¸ìž : ì—†ìŒ
+	ë°˜í™˜ê°’    : string productName
 */
 string ClothingProductData::getProductName() {
 	return this->productName;
 }
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : setRecentSearch()
-	±â´É	  : ¸â¹öº¯¼ö secentSearch ÃÊ±âÈ­
-	Àü´Þ ÀÎÀÚ : ¾øÀ½
-	¹ÝÈ¯°ª    : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : setRecentSearch()
+	ê¸°ëŠ¥	  : ë©¤ë²„ë³€ìˆ˜ secentSearch ì´ˆê¸°í™”
+	ì „ë‹¬ ì¸ìž : ì—†ìŒ
+	ë°˜í™˜ê°’    : ì—†ìŒ
 */
 void ClothingProductData::setRecentSearch(int n) {
 	if (n == 0) {
@@ -48,60 +48,71 @@ void ClothingProductData::setRecentSearch(int n) {
 }
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : downremainQuantity()
-	±â´É : »óÇ°±¸¸Å ½Ã, ¸â¹öº¯¼ö remainQuantity 1°¨¼Ò
-	Àü´Þ ÀÎÀÚ : ¾øÀ½
-	¹ÝÈ¯°ª : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : downremainQuantity()
+	ê¸°ëŠ¥ : ìƒí’ˆêµ¬ë§¤ ì‹œ, ë©¤ë²„ë³€ìˆ˜ remainQuantity 1ê°ì†Œ
+	ì „ë‹¬ ì¸ìž : ì—†ìŒ
+	ë°˜í™˜ê°’ : ì—†ìŒ
 */
 void ClothingProductData::downremainQuantity() {
 	this->remainQuantity--;
 }
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : upsalesQuantity()
-	±â´É : »óÇ°±¸¸Å ½Ã, ¸â¹öº¯¼ö salesQuantity 1Áõ°¡
-	Àü´Þ ÀÎÀÚ : ¾øÀ½
-	¹ÝÈ¯°ª : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : upsalesQuantity()
+	ê¸°ëŠ¥ : ìƒí’ˆêµ¬ë§¤ ì‹œ, ë©¤ë²„ë³€ìˆ˜ salesQuantity 1ì¦ê°€
+	ì „ë‹¬ ì¸ìž : ì—†ìŒ
+	ë°˜í™˜ê°’ : ì—†ìŒ
 */
 void ClothingProductData::upsalesQuantity() {
 	this->salesQuantity++;
 }
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : getRecentSearch()
-	±â´É	  : ¸â¹öº¯¼ö recentSearch ¹ÝÈ¯
-	Àü´Þ ÀÎÀÚ : ¾øÀ½
-	¹ÝÈ¯°ª    : int recentSearch
+	í•¨ìˆ˜ ì´ë¦„ : getRecentSearch()
+	ê¸°ëŠ¥	  : ë©¤ë²„ë³€ìˆ˜ recentSearch ë°˜í™˜
+	ì „ë‹¬ ì¸ìž : ì—†ìŒ
+	ë°˜í™˜ê°’    : int recentSearch
 */
 int ClothingProductData::getRecentSearch() {
 	return this->recentSearch;
 }
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : getSellerID()
-	±â´É	  : ¸â¹öº¯¼ö sellerID ¹ÝÈ¯
-	Àü´Þ ÀÎÀÚ : ¾øÀ½
-	¹ÝÈ¯°ª    : string sellerID
+	í•¨ìˆ˜ ì´ë¦„ : getSellerID()
+	ê¸°ëŠ¥	  : ë©¤ë²„ë³€ìˆ˜ sellerID ë°˜í™˜
+	ì „ë‹¬ ì¸ìž : ì—†ìŒ
+	ë°˜í™˜ê°’    : string sellerID
 */
 string ClothingProductData::getSellerID() {
 	return this->sellerID;
 }
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : setBuyerID()
-	±â´É	  : ¸â¹öº¯¼ö BuyerID ÃÊ±âÈ­
-	Àü´Þ ÀÎÀÚ : ¾øÀ½
-	¹ÝÈ¯°ª    : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : setBuyerID()
+	ê¸°ëŠ¥	  : ë©¤ë²„ë³€ìˆ˜ BuyerID ì´ˆê¸°í™”
+	ì „ë‹¬ ì¸ìž : ì—†ìŒ
+	ë°˜í™˜ê°’    : ì—†ìŒ
 */
 void ClothingProductData::setBuyerID(string buyerID) {
 	this->buyerID = buyerID;
 }
 
+
 /*
-	ÇÔ¼ö ÀÌ¸§ : getBuyerID()
-	±â´É	  : ¸â¹öº¯¼ö BuyerID ¹ÝÈ¯
-	Àü´Þ ÀÎÀÚ : ¾øÀ½
-	¹ÝÈ¯°ª    : string BuyerID
+	í•¨ìˆ˜ ì´ë¦„ : setSatisfaction()
+	ê¸°ëŠ¥	  : ë©¤ë²„ë³€ìˆ˜ satisfaction ì´ˆê¸°í™”
+	ì „ë‹¬ ì¸ìž : ì—†ìŒ
+	ë°˜í™˜ê°’    : ì—†ìŒ
+*/
+void ClothingProductData::setSatisfaction(int satisfaction) {
+	this->satisfaction = satisfaction;
+}
+
+/*
+	í•¨ìˆ˜ ì´ë¦„ : getBuyerID()
+	ê¸°ëŠ¥	  : ë©¤ë²„ë³€ìˆ˜ BuyerID ë°˜í™˜
+	ì „ë‹¬ ì¸ìž : ì—†ìŒ
+	ë°˜í™˜ê°’    : string BuyerID
 */
 string ClothingProductData::getBuyerID() {
 	return this->buyerID;
@@ -109,20 +120,20 @@ string ClothingProductData::getBuyerID() {
 
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : getRemainQuantity()
-	±â´É	  : ¸â¹öº¯¼ö remainQuantity ¹ÝÈ¯
-	Àü´Þ ÀÎÀÚ : ¾øÀ½
-	¹ÝÈ¯°ª    : int remainQuantity
+	í•¨ìˆ˜ ì´ë¦„ : getRemainQuantity()
+	ê¸°ëŠ¥	  : ë©¤ë²„ë³€ìˆ˜ remainQuantity ë°˜í™˜
+	ì „ë‹¬ ì¸ìž : ì—†ìŒ
+	ë°˜í™˜ê°’    : int remainQuantity
 */
 int ClothingProductData::getRemainQuantity() {
 	return this->remainQuantity;
 }
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : getClothingProductStatistics()
-	±â´É	  : »óÇ° ÆÇ¸Å Åë°èÁ¤º¸¿¡ ÇÊ¿äÇÑ °ªÀ» ÀúÀå
-	Àü´Þ ÀÎÀÚ : string *productName, int *totalSales, int *average
-	¹ÝÈ¯°ª    : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : getClothingProductStatistics()
+	ê¸°ëŠ¥	  : ìƒí’ˆ íŒë§¤ í†µê³„ì •ë³´ì— í•„ìš”í•œ ê°’ì„ ì €ìž¥
+	ì „ë‹¬ ì¸ìž : string *productName, int *totalSales, int *average
+	ë°˜í™˜ê°’    : ì—†ìŒ
 */
 void ClothingProductData::getClothingProductStatistics(string* productName, int* totalSales, int* average) {
 	*productName = this->productName;
@@ -131,10 +142,10 @@ void ClothingProductData::getClothingProductStatistics(string* productName, int*
 }
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : getSalesClothingProductDetails()
-	±â´É	  : ÆÇ¸ÅÁßÀÎ »óÇ° Á¤º¸¿¡ ÇÊ¿äÇÑ °ªÀ» ÀúÀå
-	Àü´Þ ÀÎÀÚ : string *productName, string *productCompanyName, int* price, int* remainQuantity
-	¹ÝÈ¯°ª    : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : getSalesClothingProductDetails()
+	ê¸°ëŠ¥	  : íŒë§¤ì¤‘ì¸ ìƒí’ˆ ì •ë³´ì— í•„ìš”í•œ ê°’ì„ ì €ìž¥
+	ì „ë‹¬ ì¸ìž : string *productName, string *productCompanyName, int* price, int* remainQuantity
+	ë°˜í™˜ê°’    : ì—†ìŒ
 */
 void ClothingProductData::getSalesClothingProductDetails(string* productName, string* productCompanyName, int* price, int* remainQuantity, string* sellerID, int* average) {
 	*productName = this->productName;
@@ -147,10 +158,10 @@ void ClothingProductData::getSalesClothingProductDetails(string* productName, st
 }
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : getSoldOutClothingProductDetails()
-	±â´É	  : ÆÇ¸Å ¿Ï·á »óÇ° Á¤º¸¿¡ ÇÊ¿äÇÑ °ªÀ» ÀúÀå
-	Àü´Þ ÀÎÀÚ : string *productName, string *productCompanyName, int* price, int* salesQuantity, int*average
-	¹ÝÈ¯°ª    : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : getSoldOutClothingProductDetails()
+	ê¸°ëŠ¥	  : íŒë§¤ ì™„ë£Œ ìƒí’ˆ ì •ë³´ì— í•„ìš”í•œ ê°’ì„ ì €ìž¥
+	ì „ë‹¬ ì¸ìž : string *productName, string *productCompanyName, int* price, int* salesQuantity, int*average
+	ë°˜í™˜ê°’    : ì—†ìŒ
 */
 void ClothingProductData::getSoldOutClothingProductDetails(string* productName, string* productCompanyName, int* price, int* salesQuantity, int* average) {
 	*productName = this->productName;
