@@ -12,7 +12,7 @@ private:
 public:
 	UserList();
 	void addNewUser(User* user);
-	void removeUser();
+	string removeUser();
 	void checkLogin(char* id, char* pw);
 	string checkLoginUser();
 	string checkLogout();

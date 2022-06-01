@@ -6,6 +6,7 @@
 #include "Login.h"
 #include "Logout.h"
 #include "UserList.h"
+#include "Withdrawal.h"
 
 using namespace std;
 
@@ -56,9 +57,11 @@ void run()
 				cout << "È¸¿ø°¡ÀÔ ¿Ï·á" << endl;
 				break;
 			}
-			case 2:
+			case 2: //2.1 È¸¿øÅ»Åð
 			{
-
+				Withdrawal withDrawal(userList);
+				cout << "È¸¿øÅ»Åð ¿Ï·á" << endl;
+				break;
 			}
 			}
 			break;

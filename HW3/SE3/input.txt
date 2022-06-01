@@ -1,8 +1,0 @@
-1 1 Yoon 1111 idY pwY
-1 1 Kim 2222 idK pwK
-1 1 park 2222 idp pwp
-1 1 Jung 2222 idJ pwJ
-1 1 Moon 2222 idK pwK
-2 1 idp pwp
-2 2 
-6
