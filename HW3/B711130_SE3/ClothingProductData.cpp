@@ -1,4 +1,5 @@
 #include "ClothingProductData.h"
+#include <string>
 
 /*
 	함수 이름 : ClothingProductData()
@@ -7,15 +8,16 @@
 	반환값    : ClothingProductData Instance
 */
 ClothingProductData::ClothingProductData(string productName, string productCompanyName, int price, int quantity, string sellerID) {
+	int i = 0;
 	this->productName = productName;
 	this->productCompanyName = productCompanyName;
 	this->price = price;
 	this->remainQuantity = quantity;
 	this->salesQuantity = 0;
 	this->average = 0;
-	this->satisfaction = 0;
+	this->satisfaction[quantity] = { 0 };
 	this->sellerID = sellerID;
-	this->buyerID = "";
+	this->buyerID[quantity] = { NULL };
 	this->recentSearch = 0;
 }
 
@@ -94,7 +96,7 @@ string ClothingProductData::getSellerID() {
 	반환값    : 없음
 */
 void ClothingProductData::setBuyerID(string buyerID) {
-	this->buyerID = buyerID;
+	this->buyerID[this->salesQuantity - 1] = buyerID; //upsalesquantity 시점에 따라 조정
 }
 
 
@@ -105,7 +107,7 @@ void ClothingProductData::setBuyerID(string buyerID) {
 	반환값    : 없음
 */
 void ClothingProductData::setSatisfaction(int satisfaction) {
-	this->satisfaction = satisfaction;
+	this->satisfaction[this->salesQuantity - 1] = satisfaction;
 }
 
 /*
@@ -114,8 +116,8 @@ void ClothingProductData::setSatisfaction(int satisfaction) {
 	전달 인자 : 없음
 	반환값    : string BuyerID
 */
-string ClothingProductData::getBuyerID() {
-	return this->buyerID;
+string ClothingProductData::getBuyerID(int i) {
+	return this->buyerID[i];
 }
 
 
@@ -127,6 +129,16 @@ string ClothingProductData::getBuyerID() {
 */
 int ClothingProductData::getRemainQuantity() {
 	return this->remainQuantity;
+}
+
+/*
+	함수 이름 : getSalesQuantity()
+	기능	  : 멤버변수 salesQuantity 반환
+	전달 인자 : 없음
+	반환값    : int salesQuantity
+*/
+int ClothingProductData::getSalesQuantity() {
+	return this->salesQuantity;
 }
 
 /*
