@@ -2,68 +2,68 @@
 using namespace std;
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : ClothingProductList()
-	±â´É	  : »ı¼ºÀÚ
-	Àü´Ş ÀÎÀÚ : ¾øÀ½
-	¹İÈ¯°ª    : ClothingProductList Instance
+	í•¨ìˆ˜ ì´ë¦„ : ClothingProductList()
+	ê¸°ëŠ¥	  : ìƒì„±ì
+	ì „ë‹¬ ì¸ì : ì—†ìŒ
+	ë°˜í™˜ê°’    : ClothingProductList Instance
 */
 ClothingProductList::ClothingProductList() {
 	this->numClothingProducts = 0;
 }
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : getNumClothingProduct()
-	±â´É	  : ¸â¹öº¯¼ö numClothingProducts ¹İÈ¯
-	Àü´Ş ÀÎÀÚ : ¾øÀ½
-	¹İÈ¯°ª    : int numClothingProducts
+	í•¨ìˆ˜ ì´ë¦„ : getNumClothingProduct()
+	ê¸°ëŠ¥	  : ë©¤ë²„ë³€ìˆ˜ numClothingProducts ë°˜í™˜
+	ì „ë‹¬ ì¸ì : ì—†ìŒ
+	ë°˜í™˜ê°’    : int numClothingProducts
 */
 int ClothingProductList::getNumClothingProduct() {
 	return numClothingProducts;
 }
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : getClothingProductData()
-	±â´É	  : ClothingProductList¿¡ Á¸ÀçÇÏ´Â i¹øÂ° ClothingProductData ¹İÈ¯
-	Àü´Ş ÀÎÀÚ : int i
-	¹İÈ¯°ª    : ClothingProductData* clothingProductList[i]
+	í•¨ìˆ˜ ì´ë¦„ : getClothingProductData()
+	ê¸°ëŠ¥	  : ClothingProductListì— ì¡´ì¬í•˜ëŠ” ië²ˆì§¸ ClothingProductData ë°˜í™˜
+	ì „ë‹¬ ì¸ì : int i
+	ë°˜í™˜ê°’    : ClothingProductData* clothingProductList[i]
 */
 ClothingProductData* ClothingProductList::getClothingProductData(int i) {
 	return this->clothingProductList[i];
 }
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : searchClothingProductData()
-	±â´É	  : 
-	Àü´Ş ÀÎÀÚ : 
-	¹İÈ¯°ª    :
+	í•¨ìˆ˜ ì´ë¦„ : searchClothingProductData()
+	ê¸°ëŠ¥	  : ìƒí’ˆëª…ê³¼ ì¼ì¹˜í•˜ëŠ” 0ê°œ ì´ìƒì¸ ìƒí’ˆì„ ì°¾ì•„ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
+	ì „ë‹¬ ì¸ì : string productName
+	ë°˜í™˜ê°’    : ClothingProductData* clothingProductList[i]
 */
 ClothingProductData* ClothingProductList::searchClothingProductData(string productName) {
 	for (int i = 0; i < this->numClothingProducts; i++) {
-		clothingProductList[i]->setRecentSearch(0); //ÀüºÎ recentSearch = 0À¸·Î ÃÊ±âÈ­.
+		clothingProductList[i]->setRecentSearch(0); //ì „ë¶€ recentSearch = 0ìœ¼ë¡œ ì´ˆê¸°í™”.
 	}
 	for (int i = 0; i < this->numClothingProducts; i++) {	
 		if (this->clothingProductList[i]->getProductName() == productName && this->clothingProductList[i]->getRemainQuantity() != 0) {
-			clothingProductList[i]->setRecentSearch(1); //°Ë»öÇÑ »óÇ°Àº recentSearch = 1·Î ÃÊ±âÈ­.
+			clothingProductList[i]->setRecentSearch(1); //ê°€ì¥ ìµœê·¼ ê²€ìƒ‰í•œ ìƒí’ˆì€ recentSearch = 1ë¡œ ì´ˆê¸°í™”.
 			return this->clothingProductList[i];
 		}
 	}
 }
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : addNewClothingProduct()
-	±â´É	  : ClothingProductList¿¡ ¸Å°³º¯¼ö·Î ³Ñ°Ü¹ŞÀº ClothingProductData¸¦ Ãß°¡
-	Àü´Ş ÀÎÀÚ : ClothingProductData* clothingProductData
-	¹İÈ¯°ª    : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : addNewClothingProduct()
+	ê¸°ëŠ¥	  : ClothingProductListì— ë§¤ê°œë³€ìˆ˜ë¡œ ë„˜ê²¨ë°›ì€ ClothingProductDataë¥¼ ì¶”ê°€
+	ì „ë‹¬ ì¸ì : ClothingProductData* clothingProductData
+	ë°˜í™˜ê°’    : ì—†ìŒ
 */
 void ClothingProductList::addNewClothingProduct(ClothingProductData* clothingProductData) {
 	clothingProductList[numClothingProducts++] = clothingProductData;
 }
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : listSalesClothingProduct()
-	±â´É	  : ·Î±×ÀÎÇÑ À¯ÀúÀÇ ÇöÀç ÆÇ¸ÅÁßÀÎ »óÇ°ÀÇ ClothingProductList¸¦ ³Ñ°ÜÁÜ
-	Àü´Ş ÀÎÀÚ : string userID, ClothingProductList* clothingProductList
-	¹İÈ¯°ª    : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : listSalesClothingProduct()
+	ê¸°ëŠ¥	  : ë¡œê·¸ì¸í•œ ìœ ì €ì˜ í˜„ì¬ íŒë§¤ì¤‘ì¸ ìƒí’ˆì˜ ClothingProductListë¥¼ ë„˜ê²¨ì¤Œ
+	ì „ë‹¬ ì¸ì : string userID, ClothingProductList* clothingProductList
+	ë°˜í™˜ê°’    : ì—†ìŒ
 */
 void ClothingProductList::listSalesClothingProduct(string userID, ClothingProductList* clothingProductList) {
 	for (int i = 0; i < this->numClothingProducts; i++) {
@@ -74,10 +74,10 @@ void ClothingProductList::listSalesClothingProduct(string userID, ClothingProduc
 }
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : listSoldOutClothingProduct()
-	±â´É	  : ·Î±×ÀÎÇÑ À¯ÀúÀÇ ÆÇ¸Å ¿Ï·áµÈ »óÇ°ÀÇ ClothingProductList¸¦ ³Ñ°ÜÁÜ
-	Àü´Ş ÀÎÀÚ : string userID, ClothingProductList* clothingProductList
-	¹İÈ¯°ª    : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : listSoldOutClothingProduct()
+	ê¸°ëŠ¥	  : ë¡œê·¸ì¸í•œ ìœ ì €ì˜ íŒë§¤ ì™„ë£Œëœ ìƒí’ˆì˜ ClothingProductListë¥¼ ë„˜ê²¨ì¤Œ
+	ì „ë‹¬ ì¸ì : string userID, ClothingProductList* clothingProductList
+	ë°˜í™˜ê°’    : ì—†ìŒ
 */
 void ClothingProductList::listSoldOutClothingProduct(string userID, ClothingProductList* clothingProductList) {
 	for (int i = 0; i < this->numClothingProducts; i++) {
@@ -88,10 +88,10 @@ void ClothingProductList::listSoldOutClothingProduct(string userID, ClothingProd
 }
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : listAllClothingProduct()
-	±â´É	  : ·Î±×ÀÎÇÑ À¯Àú°¡ ÆÇ¸ÅÇÏ´Â/ÆÇ¸ÅµÈ ¸ğµç »óÇ°ÀÇ ClothingList¸¦ ³Ñ°ÜÁÜ
-	Àü´Ş ÀÎÀÚ : string userID, ClothingProductList* clothingProductList
-	¹İÈ¯°ª    : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : listAllClothingProduct()
+	ê¸°ëŠ¥	  : ë¡œê·¸ì¸í•œ ìœ ì €ê°€ íŒë§¤í•˜ëŠ”/íŒë§¤ëœ ëª¨ë“  ìƒí’ˆì˜ ClothingListë¥¼ ë„˜ê²¨ì¤Œ
+	ì „ë‹¬ ì¸ì : string userID, ClothingProductList* clothingProductList
+	ë°˜í™˜ê°’    : ì—†ìŒ
 */
 void ClothingProductList::listAllClothingProduct(string userID, ClothingProductList* clothingProductList) {
 	for (int i = 0; i < this->numClothingProducts; i++) {
@@ -102,10 +102,10 @@ void ClothingProductList::listAllClothingProduct(string userID, ClothingProductL
 }
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : listPurchaseClothingProducts()
-	±â´É	  : ·Î±×ÀÎÇÑ À¯Àú°¡ ±¸¸ÅÇÑ ¸ğµç »óÇ°ÀÇ ClothingList¸¦ ³Ñ°ÜÁÜ
-	Àü´Ş ÀÎÀÚ : string userID, ClothingProductList* clothingProductList
-	¹İÈ¯°ª    : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : listPurchaseClothingProducts()
+	ê¸°ëŠ¥	  : ë¡œê·¸ì¸í•œ ìœ ì €ê°€ êµ¬ë§¤í•œ ëª¨ë“  ìƒí’ˆì˜ ClothingListë¥¼ ë„˜ê²¨ì¤Œ
+	ì „ë‹¬ ì¸ì : string userID, ClothingProductList* clothingProductList
+	ë°˜í™˜ê°’    : ì—†ìŒ
 */
 void ClothingProductList::listPurchaseClothingProduct(string userID, ClothingProductList* clothingProductList) {
 	
@@ -113,5 +113,26 @@ void ClothingProductList::listPurchaseClothingProduct(string userID, ClothingPro
 		if (this->clothingProductList[i]->getBuyerID() == userID) {
 			clothingProductList->addNewClothingProduct(this->clothingProductList[i]);
 		}
+	}
+}
+
+
+/*
+	í•¨ìˆ˜ ì´ë¦„ : addSatisfactionOfProduct()
+	ê¸°ëŠ¥	  : ë¡œê·¸ì¸í•œ ìœ ì €ê°€ êµ¬ë§¤í•œ ìƒí’ˆì— êµ¬ë§¤ë§Œì¡±ë„ë¥¼ ì¶”ê°€
+	ì „ë‹¬ ì¸ì : string userID, ClothingProductList* clothingProductList, int satisfaction
+	ë°˜í™˜ê°’    : ì—†ìŒ
+*/
+ClothingProductData* ClothingProductList::addSatisfactionOfProduct(string userID, string ProductName, int Satisfaction) {
+	int checkNull = 1;
+	for (int i = 0; i < this->numClothingProducts; i++) {
+		if (this->clothingProductList[i]->getBuyerID() == userID && this->clothingProductList[i]->getProductName() == ProductName) {
+			this->clothingProductList[i]->setSatisfaction(Satisfaction);
+			checkNull = 0;
+			return this->clothingProductList[i];
+		}	
+	}
+	if(checkNull) {
+		return NULL;
 	}
 }
