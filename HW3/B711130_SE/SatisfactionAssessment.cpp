@@ -1,5 +1,0 @@
-
-
-SatisfactionAssessment::SatisfactionAssessment() {
-	
-}
