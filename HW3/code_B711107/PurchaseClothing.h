@@ -8,11 +8,11 @@ class PurchaseClothingUI;
 class PurchaseClothing
 {
 private:
-	PurchaseClothingUI* pPurchaseClothingUI;
-	ClothingProductList* pClothingProductList;
-	UserList* pUserList;
-public:
-	PurchaseClothing(ClothingProductList* clothingProductList, UserList* userList);
-	ClothingProductData* purchaseClothingProduct();
-};
+	PurchaseClothingUI *pPurchaseClothingUI;
+	ClothingProductList *pClothingProductList;
+	UserList *pUserList;
 
+public:
+	PurchaseClothing(ClothingProductList *clothingProductList, UserList *userList);
+	void purchaseClothingProduct(string *, string *);
+};
