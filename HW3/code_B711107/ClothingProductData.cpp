@@ -91,7 +91,11 @@ void ClothingProductData::getClothingProductStatistics(string *productName, int 
 	for(int i=0;i<this->salesQuantity;i++){
 		sumSatisfaction += this->satisfaction[i];
 	}
-    *average = (float) sumSatisfaction / (float) this->salesQuantity;
+    if (this->salesQuantity ==0)
+		*average = 0;
+	else{
+		*average = (float) sumSatisfaction / (float) this->salesQuantity;
+	}
 }
 
 /*
@@ -117,7 +121,11 @@ void ClothingProductData::getSalesClothingProductDetails(string* productName, st
 	for(int i=0;i<this->salesQuantity;i++){
 		sumSatisfaction += this->satisfaction[i];
 	}
-    *average = (float)sumSatisfaction / (float)this->salesQuantity;
+    if (this->salesQuantity ==0)
+		*average = 0;
+	else{
+		*average = (float) sumSatisfaction / (float) this->salesQuantity;
+	}
 }
 
 /*
@@ -135,7 +143,11 @@ void ClothingProductData::getSoldOutClothingProductDetails(string *productName, 
 	for(int i=0;i<this->salesQuantity;i++){
 		sumSatisfaction += this->satisfaction[i];
 	}
-    *average = (float)sumSatisfaction / (float)this->salesQuantity;
+    if (this->salesQuantity ==0)
+		*average = 0;
+	else{
+		*average = (float) sumSatisfaction / (float) this->salesQuantity;
+	}
 }
 
 /*
