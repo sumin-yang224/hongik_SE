@@ -29,10 +29,10 @@ public:
     void downremainQuantity();
     void upsalesQuantity();
     int getRemainQuantity();
-    
+    void setSatisfaction(int);
     void getSalesClothingProductDetails(string*, string*, int*, int*, string*, int*);
     void createClothingProduct();
     void getSoldOutClothingProductDetails(string*, string*, int*, int*, int*);
     void getClothingProductStatistics(string*, int*, int*);
-    void addSatisfactionOfProduct();
+    
 };
