@@ -10,9 +10,9 @@ SearchClothing::SearchClothing(ClothingProductList *pClothingProductList)
 	pSearchClothingUI->searchClothingProduct();
 }
 
-void SearchClothing::showClothingProductDetails(string productName, string *productCompanyName, int *price, int *remainQuantity, string *sellerID, float *average)
+void SearchClothing::showClothingProductDetails(string *productName, string *productCompanyName, int *price, int *remainQuantity, string *sellerID, float *average)
 {
 	ClothingProductData *data;
-	data = pClothingProductList->searchClothingProductData(productName);
-	data->getSalesClothingProductDetails(&productName, productCompanyName, price, remainQuantity, sellerID, average);
+	data = pClothingProductList->searchClothingProductData(*productName);
+	data->getSalesClothingProductDetails(productName, productCompanyName, price, remainQuantity, sellerID, average);
 }

@@ -6,9 +6,9 @@ class PurchaseClothing;
 class PurchaseClothingUI
 {
 private:
-	PurchaseClothing* pPurchaseClothing;
-	UserList* pUserList;
+	PurchaseClothing *pPurchaseClothing;
+
 public:
-	PurchaseClothingUI(PurchaseClothing* purchaseClothing, UserList* userList);
+	PurchaseClothingUI(PurchaseClothing *purchaseClothing);
 	void clickPurchaseButton();
 };

@@ -10,5 +10,5 @@ private:
 
 public:
 	SearchClothing(ClothingProductList *pClothingProductList);
-	void showClothingProductDetails(string, string *, int *, int *, string *, float *);
+	void showClothingProductDetails(string *, string *, int *, int *, string *, float *);
 };

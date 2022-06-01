@@ -11,10 +11,9 @@ using namespace std;
 extern ifstream readFile;
 extern ofstream writeFile;
 
-PurchaseClothingUI::PurchaseClothingUI(PurchaseClothing *purchaseClothing, UserList *userList)
+PurchaseClothingUI::PurchaseClothingUI(PurchaseClothing *purchaseClothing)
 {
 	pPurchaseClothing = purchaseClothing;
-	pUserList = userList;
 }
 
 void PurchaseClothingUI::clickPurchaseButton()

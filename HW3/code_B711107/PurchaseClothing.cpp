@@ -7,7 +7,7 @@ PurchaseClothing::PurchaseClothing(ClothingProductList *clothingProductList, Use
 {
 	this->pClothingProductList = clothingProductList;
 	this->pUserList = userList;
-	pPurchaseClothingUI = new PurchaseClothingUI(this, pUserList);
+	pPurchaseClothingUI = new PurchaseClothingUI(this);
 	pPurchaseClothingUI->clickPurchaseButton();
 }
 

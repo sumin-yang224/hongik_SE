@@ -27,7 +27,7 @@ void SearchClothingUI::searchClothingProduct()
 
 	readFile >> productName;
 
-	pSearchClothing->showClothingProductDetails(productName, &productCompanyName, &price, &remainQuantity, &sellerID, &average);
+	pSearchClothing->showClothingProductDetails(&productName, &productCompanyName, &price, &remainQuantity, &sellerID, &average);
 	writeFile << "4.4. 상품 정보 검색 " << endl;
 	writeFile << "> " << sellerID << " " << productName << " " << productCompanyName << " " << price << " " << remainQuantity << " " << average << endl;
 }
