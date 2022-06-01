@@ -10,9 +10,22 @@ void UserList::addNewUser(User* user)
 	userList[numUsers++] = user;
 }
 
-void UserList::removeUser()
+string UserList::removeUser()
 {
-
+	string id;
+	for (int i = 0; i < numUsers; i++)
+	{
+		if (userList[i]->checkLog())
+		{
+			id = userList[i]->getId();
+			numUsers--;
+			for (int j = i; j < numUsers; j++)
+			{
+				userList[j] = userList[j + 1];
+			}
+		}
+	}
+	return id;
 }
 
 void UserList::checkLogin(char* id, char* pw)
