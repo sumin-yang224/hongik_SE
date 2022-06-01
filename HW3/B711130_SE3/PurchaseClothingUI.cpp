@@ -25,10 +25,13 @@ void PurchaseClothingUI::clickPurchaseButton()
 	ClothingProductData* data;
 
 	data = pPurchaseClothing->purchaseClothingProduct();
-	if (data->getBuyerID() == userID) {
-		cout << "이미 구매한 상품입니다." << endl;
-		return;
+	for (int i = 0; i < data->getSalesQuantity(); i++) {
+		if (data->getBuyerID(i) == userID) {
+			cout << "이미 구매한 상품입니다." << endl;
+			return;
+		}
 	}
+	
 	writeFile << "4.2. 상품 구매" << endl;
 	data->getSalesClothingProductDetails(&productName, &productCompanyName, &price, &remainQuantity, &sellerID, &average);
 	data->upsalesQuantity();
