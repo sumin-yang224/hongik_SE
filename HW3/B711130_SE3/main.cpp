@@ -11,7 +11,7 @@
 #include "InquirePurchaseClothing.h"
 #include "SatisfactionAssessment.h"
 #include "ClothingProductList.h"
-
+#include "Withdrawal.h"
 #include <iostream>
 #include <cstring>
 #include <string>
@@ -19,21 +19,21 @@
 
 using namespace std;
 
-// »ó¼ö ¼±¾ğ
+// ìƒìˆ˜ ì„ ì–¸
 #define MAX_STRING 32
 #define INPUT_FILE_NAME "input.txt"
 #define OUTPUT_FILE_NAME "output.txt"
 
-// ÇÔ¼ö ¼±¾ğ
+// í•¨ìˆ˜ ì„ ì–¸
 void run();
 
-// º¯¼ö ¼±¾ğ
+// ë³€ìˆ˜ ì„ ì–¸
 //FILE* in_fp, * out_fp;
 ifstream readFile;
 ofstream writeFile;
 
 int main()
-{ // ÆÄÀÏ ÀÔÃâ·ÂÀ» À§ÇÑ ÃÊ±âÈ­
+{ // íŒŒì¼ ì…ì¶œë ¥ì„ ìœ„í•œ ì´ˆê¸°í™”
 
 	readFile.open(INPUT_FILE_NAME);
 	writeFile.open(OUTPUT_FILE_NAME);
@@ -52,32 +52,33 @@ void run()
 	UserList* userList = new UserList();
 	ClothingProductList* clothingProductList = new ClothingProductList();
 
-	// ¸Ş´º ÆÄ½ÌÀ» À§ÇÑ level ±¸ºĞÀ» À§ÇÑ º¯¼ö
+	// ë©”ë‰´ íŒŒì‹±ì„ ìœ„í•œ level êµ¬ë¶„ì„ ìœ„í•œ ë³€ìˆ˜
 	int menu_level_1 = 0, menu_level_2 = 0;
 	int is_program_exit = 0;
 
 	while (!is_program_exit)
 	{
-		// ÀÔ·ÂÆÄÀÏ¿¡¼­ ¸Ş´º ¼ıÀÚ 2°³¸¦ ÀĞ±â
+		// ì…ë ¥íŒŒì¼ì—ì„œ ë©”ë‰´ ìˆ«ì 2ê°œë¥¼ ì½ê¸°
 		readFile >> menu_level_1;
 		readFile >> menu_level_2;
 
-		// ¸Ş´º ±¸ºĞ ¹× ÇØ´ç ¿¬»ê ¼öÇà
+		// ë©”ë‰´ êµ¬ë¶„ ë° í•´ë‹¹ ì—°ì‚° ìˆ˜í–‰
 		switch (menu_level_1)
 		{
 		case 1:
 		{
 			switch (menu_level_2)
 			{
-			case 1: //1.1. È¸¿ø°¡ÀÔ
+			case 1: //1.1. íšŒì›ê°€ì…
 			{
 				SignUp signUp(userList);
-				cout << "È¸¿ø°¡ÀÔ ¿Ï·á" << endl;
+				cout << "íšŒì›ê°€ì… ì™„ë£Œ" << endl;
 				break;
 			}
-			case 2: //1.2. È¸¿øÅ»Åğ
+			case 2: //2.1 íšŒì›íƒˆí‡´
 			{
-
+				Withdrawal withDrawal(userList);
+				cout << "íšŒì›íƒˆí‡´ ì™„ë£Œ" << endl;
 				break;
 			}
 			}
@@ -87,16 +88,16 @@ void run()
 		{
 			switch (menu_level_2)
 			{
-			case 1: //2.1. ·Î±×ÀÎ
+			case 1: //2.1. ë¡œê·¸ì¸
 			{
 				Login login(userList);
-				cout << "·Î±×ÀÎ ¿Ï·á" << endl;
+				cout << "ë¡œê·¸ì¸ ì™„ë£Œ" << endl;
 				break;
 			}
-			case 2: //2.2. ·Î±×¾Æ¿ô
+			case 2: //2.2. ë¡œê·¸ì•„ì›ƒ
 			{
 				Logout logout(userList);
-				cout << "·Î±×¾Æ¿ô ¿Ï·á" << endl;
+				cout << "ë¡œê·¸ì•„ì›ƒ ì™„ë£Œ" << endl;
 				break;
 			}
 			}
@@ -106,22 +107,22 @@ void run()
 		{
 			switch (menu_level_2)
 			{
-			case 1:   // "3.1. ÆÇ¸Å ÀÇ·ù µî·Ï" ¸Ş´º ºÎºĞ
+			case 1:   // "3.1. íŒë§¤ ì˜ë¥˜ ë“±ë¡" ë©”ë‰´ ë¶€ë¶„
 			{
 				RegisterSalesClothing registerSalesClothing(clothingProductList, userList);
-				cout << "ÆÇ¸Å ÀÇ·ù µî·Ï ¿Ï·á" << endl;
+				cout << "íŒë§¤ ì˜ë¥˜ ë“±ë¡ ì™„ë£Œ" << endl;
 				break;
 			}
-			case 2:   // "3.2. µî·Ï »óÇ° Á¶È¸" ¸Ş´º ºÎºĞ
+			case 2:   // "3.2. ë“±ë¡ ìƒí’ˆ ì¡°íšŒ" ë©”ë‰´ ë¶€ë¶„
 			{
 				InquireSalesClothing inquireSalesClothing(clothingProductList, userList);
-				cout << "ÆÇ¸Å ÁßÀÎ »óÇ° Á¶È¸ ¿Ï·á" << endl;
+				cout << "íŒë§¤ ì¤‘ì¸ ìƒí’ˆ ì¡°íšŒ ì™„ë£Œ" << endl;
 				break;
 			}
-			case 3:   // "3.3. ÆÇ¸Å ¿Ï·á »óÇ° Á¶È¸" ¸Ş´º ºÎºĞ
+			case 3:   // "3.3. íŒë§¤ ì™„ë£Œ ìƒí’ˆ ì¡°íšŒ" ë©”ë‰´ ë¶€ë¶„
 			{
 				InquireSoldOutClothing inquireSoldOutClothing(clothingProductList, userList);
-				cout << "ÆÇ¸Å ¿Ï·á »óÇ° Á¶È¸ ¿Ï·á" << endl;
+				cout << "íŒë§¤ ì™„ë£Œ ìƒí’ˆ ì¡°íšŒ ì™„ë£Œ" << endl;
 				break;
 			}
 			}
@@ -129,31 +130,30 @@ void run()
 		}
 		case 4:
 		{
-			string prodName;
 			switch (menu_level_2)
 			{
-			case 1:     // "4.1. »óÇ° Á¤º¸ °Ë»ö¡° ¸Ş´º ºÎºĞ
+			case 1:     // "4.1. ìƒí’ˆ ì •ë³´ ê²€ìƒ‰â€œ ë©”ë‰´ ë¶€ë¶„
 			{
 				SearchClothing searchClothing(clothingProductList);
-				cout << "»óÇ° °Ë»ö ¿Ï·á" << endl;
+				cout << "ìƒí’ˆ ê²€ìƒ‰ ì™„ë£Œ" << endl;
 				break;
 			}
-			case 2:     // "4.2. »óÇ° ±¸¸Å¡° ¸Ş´º ºÎºĞ
+			case 2:     // "4.2. ìƒí’ˆ êµ¬ë§¤â€œ ë©”ë‰´ ë¶€ë¶„
 			{
 				PurchaseClothing purchaseClothing(clothingProductList, userList);
-				cout << "»óÇ° ±¸¸Å ¿Ï·á" << endl;
+				cout << "ìƒí’ˆ êµ¬ë§¤ ì™„ë£Œ" << endl;
 				break;
 			}
-			case 3:     // "4.3. »óÇ° ±¸¸Å ³»¿ª Á¶È¸¡° ¸Ş´º ºÎºĞ
+			case 3:     // "4.3. ìƒí’ˆ êµ¬ë§¤ ë‚´ì—­ ì¡°íšŒâ€œ ë©”ë‰´ ë¶€ë¶„
 			{
 				InquirePurchaseClothing inquirePurchaseClothing(clothingProductList, userList);
-				cout << "»óÇ° ±¸¸Å ³»¿ª Á¶È¸ ¿Ï·á" << endl;
+				cout << "ìƒí’ˆ êµ¬ë§¤ ë‚´ì—­ ì¡°íšŒ ì™„ë£Œ" << endl;
 				break;
 			}
-			case 4:     // "4.4. »óÇ° ±¸¸Å¸¸Á·µµ Æò°¡¡° ¸Ş´º ºÎºĞ
+			case 4:     // "4.4. ìƒí’ˆ êµ¬ë§¤ë§Œì¡±ë„ í‰ê°€â€œ ë©”ë‰´ ë¶€ë¶„
 			{
-				//SatisfactionAssessment
-
+				SatisfactionAssessment satisfactionAssessment(clothingProductList, userList);
+				cout << "ìƒí’ˆ êµ¬ë§¤ë§Œì¡±ë„ í‰ê°€ ì™„ë£Œ" << endl;
 				break;
 			}
 			}
@@ -163,10 +163,10 @@ void run()
 		{
 			switch (menu_level_2)
 			{
-			case 1:   // "5.1. ÆÇ¸Å »óÇ° Åë°è" ¸Ş´º ºÎºĞ
+			case 1:   // "5.1. íŒë§¤ ìƒí’ˆ í†µê³„" ë©”ë‰´ ë¶€ë¶„
 			{
 				PrintProductSalesStatistics printProductSalesStatistics(clothingProductList, userList);
-				cout << "ÆÇ¸Å »óÇ° Åë°è Ãâ·Â ¿Ï·á" << endl;
+				cout << "íŒë§¤ ìƒí’ˆ í†µê³„ ì¶œë ¥ ì™„ë£Œ" << endl;
 				break;
 			}
 			}
@@ -176,10 +176,10 @@ void run()
 		{
 			switch (menu_level_2)
 			{
-			case 1:   // 6.1. Á¾·á
+			case 1:   // 6.1. ì¢…ë£Œ
 			{
 				is_program_exit = 1;
-				writeFile << "6.1. Á¾·á" << endl;
+				writeFile << "6.1. ì¢…ë£Œ" << endl;
 				break;
 			}
 			}
